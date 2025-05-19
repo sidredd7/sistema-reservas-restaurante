@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './formStyles.css';
 
 const VisualizarReservas = ({ onBack }) => {
   const [reservas, setReservas] = useState([]);
@@ -36,7 +37,7 @@ const VisualizarReservas = ({ onBack }) => {
         const errorData = await response.json();
         throw new Error(`Erro ao confirmar reserva: ${response.status} - ${errorData?.error || response.statusText}`);
       }
-      fetchReservas(); // Atualiza a lista após a confirmação
+      fetchReservas();
     } catch (error) {
       console.error('Erro ao confirmar reserva:', error);
       alert(`Falha ao confirmar reserva: ${error.message}`);
@@ -52,7 +53,7 @@ const VisualizarReservas = ({ onBack }) => {
         const errorData = await response.json();
         throw new Error(`Erro ao cancelar reserva: ${response.status} - ${errorData?.error || response.statusText}`);
       }
-      fetchReservas(); // Atualiza a lista após o cancelamento
+      fetchReservas();
     } catch (error) {
       console.error('Erro ao cancelar reserva:', error);
       alert(`Falha ao cancelar reserva: ${error.message}`);
@@ -68,9 +69,9 @@ const VisualizarReservas = ({ onBack }) => {
   }
 
   return (
-    <div className="lista-reservas-container">
+    <div className="form-container">
       <h2>Reservas Agendadas</h2>
-      <button onClick={onBack}>Voltar ao Menu</button>
+      <button className="back-button" onClick={onBack}>Voltar ao Menu</button>
       {reservas.length === 0 ? (
         <p>Nenhuma reserva agendada ainda.</p>
       ) : (
@@ -99,10 +100,10 @@ const VisualizarReservas = ({ onBack }) => {
                 <td>{reserva.status}</td>
                 <td>
                   {reserva.status === 'Pendente' && (
-                    <>
+                    <div style={{ display: 'flex', flexWrap: 'wrap' }}> {/* Usamos um div com flexbox */}
                       <button onClick={() => handleConfirmar(reserva.id)}>Confirmar</button>
                       <button onClick={() => handleCancelar(reserva.id)}>Cancelar</button>
-                    </>
+                    </div>
                   )}
                   {reserva.status === 'Confirmada' && <span>Confirmada</span>}
                   {reserva.status === 'Cancelada' && <span>Cancelada</span>}
