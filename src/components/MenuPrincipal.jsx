@@ -2,14 +2,14 @@ import React from 'react';
 
 function MenuPrincipal({ onSelectOption }) {
   return (
-    <section className="menu-principal-container"> {/* Classe específica para o menu container, se necessário para estilização */}
+    <section className="menu-principal-container">
       <div className="container">
         <h1>Gerenciador de Reservas</h1>
         <h2>Selecione uma opção:</h2>
       </div>
 
       <div
-        className="menu-button cadastrar" // Classes para estilização
+        className="menu-button cadastrar"
         role="button"
         tabIndex="0"
         onClick={() => onSelectOption('cadastro')}
@@ -34,18 +34,6 @@ function MenuPrincipal({ onSelectOption }) {
       >
         <h1>Visualizar Reservas</h1>
       </div>
-
-      {/* Removendo a opção "Confirmação de Reserva" */}
-      {/*
-      <div
-        className="menu-button confirmar"
-        role="button"
-        tabIndex="0"
-        onClick={() => onSelectOption('confirmar')}
-      >
-        <h1>Confirmação de Reserva</h1>
-      </div>
-      */}
     </section>
   );
 }
