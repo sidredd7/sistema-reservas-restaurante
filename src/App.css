@@ -32,7 +32,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 40px);
+    min-height: calc(70vh - 40px);
     padding: 20px;
     box-sizing: border-box;
     background-color: hsl(0, 0%, 25%, 0.9);
@@ -43,6 +43,10 @@ h2 {
 .container {
     text-align: center;
     margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .menu-button {
@@ -104,6 +108,7 @@ h2 {
     width: 100%;
     margin: 20px auto;
     box-sizing: border-box;
+    
 }
 
 .visualizacao-container {
@@ -246,4 +251,95 @@ textarea {
      .visualizacao-conteudo p {
          font-size: 15px;
      }
+	 /* formStyles.css */
+.form-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-container button {
+  background-color: #f00;
+  color: white;
+  padding: 8px 12px; /* Reduz o padding */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em; /* Reduz a fonte */
+  margin-right: 5px; /* Adiciona um pequeno espaço entre os botões */
+  margin-bottom: 5px; /* Adiciona um pequeno espaço abaixo dos botões */
+}
+
+.form-container button:hover {
+  background-color: #d00;
+}
+
+.form-container .back-button {
+  background-color: #888;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-right: 10px;
+}
+
+.form-container .back-button:hover {
+  background-color: #666;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.success-message {
+  color: green;
+  margin-bottom: 10px;
+}
+
+.form-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.form-container table th,
+.form-container table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.form-container table th {
+  background-color: #f2f2f2;
+  text-align: center; /* Centraliza o texto nos cabeçalhos */
+}
 }
